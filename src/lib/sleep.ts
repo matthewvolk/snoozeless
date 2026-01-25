@@ -28,7 +28,7 @@ export function calculateWakeTimes(
   });
 }
 
-function formatWithOffset(date: Date, offset: string): string {
+export function formatWithOffset(date: Date, offset: string): string {
   const offsetMinutes = parseOffsetMinutes(offset);
   const localTime = new Date(date.getTime() + offsetMinutes * 60 * 1000);
 
@@ -41,7 +41,7 @@ function formatWithOffset(date: Date, offset: string): string {
   return `${year}-${month}-${day}T${hours}:${minutes}${offset}`;
 }
 
-function formatLocalTime(date: Date, offset: string): string {
+export function formatLocalTime(date: Date, offset: string): string {
   const offsetMinutes = parseOffsetMinutes(offset);
   const localTime = new Date(date.getTime() + offsetMinutes * 60 * 1000);
 
@@ -53,13 +53,13 @@ function formatLocalTime(date: Date, offset: string): string {
   return `${hour12}:${minutes} ${period}`;
 }
 
-function parseOffsetMinutes(offset: string): number {
+export function parseOffsetMinutes(offset: string): number {
   const sign = offset.startsWith("-") ? -1 : 1;
   const [hours, minutes] = offset.slice(1).split(":").map(Number);
   return sign * (hours * 60 + minutes);
 }
 
-function formatLabel(
+export function formatLabel(
   local: string,
   totalSleepMinutes: number,
   cycles: number,
