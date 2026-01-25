@@ -1,0 +1,7 @@
+[tools]
+node = "24.11.1"
+
+[env]
+# adds node modules binaries to PATH
+# allows you to run binaries installed with npm available without `pnpm exec`
+_.path = ['{{config_root}}/node_modules/.bin']
