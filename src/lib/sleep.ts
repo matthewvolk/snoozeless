@@ -2,7 +2,7 @@ import type { WakeTimeOption } from "../types";
 
 const CYCLE_LENGTH_MINUTES = 90;
 const ONSET_LATENCY_MINUTES = 15;
-const CYCLES_TO_RETURN = [7, 6, 5, 4, 3];
+const CYCLES_TO_RETURN = [7, 6, 5, 4, 3, 2, 1];
 
 export function calculateWakeTimes(
   now: Date,

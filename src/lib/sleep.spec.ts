@@ -8,17 +8,17 @@ import {
 
 describe("calculateWakeTimes", () => {
   describe("wake time options", () => {
-    it("returns exactly 5 options", () => {
+    it("returns exactly 7 options", () => {
       const now = new Date("2026-01-25T22:43:00Z");
       const options = calculateWakeTimes(now, "-06:00");
-      expect(options).toHaveLength(5);
+      expect(options).toHaveLength(7);
     });
 
-    it("returns options ordered by cycles [7, 6, 5, 4, 3]", () => {
+    it("returns options ordered by cycles [7, 6, 5, 4, 3, 2, 1]", () => {
       const now = new Date("2026-01-25T22:43:00Z");
       const options = calculateWakeTimes(now, "-06:00");
       const cycles = options.map((opt) => opt.cycles);
-      expect(cycles).toEqual([7, 6, 5, 4, 3]);
+      expect(cycles).toEqual([7, 6, 5, 4, 3, 2, 1]);
     });
 
     it("has middle option (index 2) with 5 cycles", () => {
